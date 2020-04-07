@@ -7,6 +7,10 @@
  * @date Sep 25, 2018
  * @author Mark H. Morrison, https://github.com/MarkHMorrison/Lightweight-Trigger-Framework
  * @date Sat Dec 29, 2018
+ *
+ * @date Nov 7, 2019
+ * @author Ramesh Dugar, updated trigger logic to separate the IsBefore and IsAfter triggers.
+ * 
  */
 public class TriggerDispatcher {
   /*
@@ -21,22 +25,33 @@ public class TriggerDispatcher {
 
     // Detect the current trigger context and fire the relevant methods on the trigger handler:
   
-    switch on triggerEvent {
-      when BEFORE_INSERT {
-        handler.BeforeInsert(trigger.new);
-      } when BEFORE_UPDATE {
-        handler.BeforeUpdate(trigger.newMap, trigger.oldMap);
-      } when BEFORE_DELETE {
-        handler.BeforeDelete(trigger.oldMap);
-      } when AFTER_INSERT {
-        handler.AfterInsert(Trigger.newMap);
-      } when AFTER_UPDATE {
-        handler.AfterUpdate(trigger.newMap, trigger.oldMap);
-      } when AFTER_DELETE {
-        handler.AfterDelete(trigger.oldMap);
-      } when AFTER_UNDELETE {
-        handler.AfterUndelete(trigger.oldMap);
-      }
-    }  
+    // Before trigger logic
+    if (Trigger.IsBefore )
+    {
+        if (Trigger.IsInsert)
+            handler.BeforeInsert(trigger.new);
+
+        if (Trigger.IsUpdate)
+            handler.BeforeUpdate(trigger.newMap, trigger.oldMap);
+
+        if (Trigger.IsDelete)
+            handler.BeforeDelete(trigger.oldMap);
+    }
+      
+    // After trigger logic
+    if (Trigger.IsAfter)
+    {
+        if (Trigger.IsInsert)
+            handler.AfterInsert(Trigger.newMap);
+
+        if (Trigger.IsUpdate)
+            handler.AfterUpdate(trigger.newMap, trigger.oldMap);
+
+        if (trigger.IsDelete)
+            handler.AfterDelete(trigger.oldMap);
+
+        if (trigger.isUndelete)
+            handler.AfterUndelete(trigger.oldMap);
+    }
   }
 }
