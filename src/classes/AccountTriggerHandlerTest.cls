@@ -1,7 +1,8 @@
 /**
- * @description Example test class for AccountTriggerHandler class.
- *              These tests cover the AccountTrigger, AccountTriggerHandler, and TriggerDispatcher
- *              You will need to implement similar tests in your triggers to get proper code coverage
+ * Example test class for AccountTriggerHandler class.
+ * These tests cover the AccountTrigger, AccountTriggerHandler, and TriggerDispatcher
+ * You will need to implement similar tests in your triggers to get proper code coverage
+ *
  * @author Mark H. Morrison, https://github.com/MarkHMorrison/Lightweight-Trigger-Framework
  * @date Sat Dec 29 2018
  */

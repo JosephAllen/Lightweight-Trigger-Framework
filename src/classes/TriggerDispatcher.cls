@@ -1,16 +1,7 @@
 /**
- * @description  This class runs the appropriate methods on the trigger handler based on the current trigger context.
+ * This class runs the appropriate methods on the trigger handler based on the current trigger context.
+ *
  * @author Chris Aldridge, http://chrisaldridge.com/triggers/lightweight-apex-trigger-framework/
- * @date Dec 31, 2015
- * @author Sep 25 by krigi, https://github.com/krigi/Lightweight-Trigger-Framework ,
- *                          Updated by krigi to take advantage of Summer’18 features: Apex switch statement and Trigger.operationType context variable
- * @date Sep 25, 2018
- * @author Mark H. Morrison, https://github.com/MarkHMorrison/Lightweight-Trigger-Framework
- * @date Sat Dec 29, 2018
- *
- * @date Nov 7, 2019
- * @author Ramesh Dugar, updated trigger logic to separate the IsBefore and IsAfter triggers.
- *
  */
 public class TriggerDispatcher {
 
