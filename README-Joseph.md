@@ -10,6 +10,13 @@ This repository is a simple trigger framework for bulkifying triggers and allowi
 
 [TOC]
 
+## Naming Convention
+
+* All the triggers should follow a consistent naming standard of SObjectName. Unless an error occurs __DO NOT__ add the text `trigger` to the end of a trigger name. Triggers can only be triggers. One noted exception is the `Case` object, whose name is also a protected word in Apex.
+* All the trigger handlers should be named as Object followed by letter `TH`. For example for Contact trigger, the handler should be named as ContactTH.
+* All the test classes should be named as HandlerName followed by Test keyword. For example for Contact the test class should be declared as ContactTH_Test.
+* None of the components in the framework should contain org name or app name.
+
 ## TriggerHandler Class
 
 - Generic TriggerHandler for triggers
